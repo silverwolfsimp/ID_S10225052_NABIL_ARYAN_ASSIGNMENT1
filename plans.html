@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalized.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px; /* Adjust as needed */
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #FFD700; /* Change the color on hover */
+        }
+
+        /* Add styles to push the content when the sidebar is open */
+        .header.push-content {
+            margin-left: 250px; /* Adjust as needed */
+        }
+
+        /* Add styles to close the sidebar on smaller screens */
+        @media screen and (max-width: 600px) {
+            .header.push-content {
+                margin-left: 0;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+        }
+        
+        /* Training plan styles */
+        .training-plans {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .training-plan {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 50px;
+            cursor: pointer;
+        }
+        
+        .training-plan img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .training-plan-text {
+            max-width: 80%;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            display: none;
+        }
+        
+        /* Enlarged training plan styles */
+        .enlarged-training-plan {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .enlarged-training-plan img {
+            max-width: 80%;
+            height: auto;
+        }
+        
+        .enlarged-training-plan-text {
+            max-width: 80%;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            color: white;
+            margin-top: 20px;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-icon">&#9776;</div>
+
+            <!-- Logo -->
+            <div class="logo"><img src="logo.png" alt="Logo"></div>
+
+            <!-- Shopping Cart Icon -->
+            <div class="cart-icon">&#128722;</div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="close-btn" onclick="closeSidebar()">&times;</div>
+            <a href="index.html">HOME</a>
+            <a href="merch.html">MERCHANDISE</a>
+            <a href="plans.html">TRAINING PLANS</a>
+            <a href="#">COACHING</a>
+        </div>
+
+        <div class="training-plans">
+            <div class="training-plan">
+                <img src="RAAA.jpg" alt="Training Plan 1" onclick="enlargeTrainingPlan(this)">
+                <div class="training-plan-text">
+                    <h2>Gain Weight</h2>
+                    <p>Unleash your full potential with our Weight Gain Plan at NAF. Tailored for those striving to build muscle and add healthy mass, this plan combines targeted workouts with personalized nutrition guidance. Embrace a journey of strength and vitality as we support you in achieving your weight gain goals. At NAF, it's not just about the numbers on the scale; it's about sculpting a stronger, more empowered version of yourself.</p>
+                </div>
+            </div>
+            <div class="training-plan">
+                <img src="climber.jpg" alt="Training Plan 2" onclick="enlargeTrainingPlan(this)">
+                <div class="training-plan-text">
+                    <h2>Lose Weight </h2>
+                    <p>Embark on a transformative journey with our Weight Loss Plan at NAF. Designed for individuals committed to shedding excess weight and embracing a healthier lifestyle, this plan integrates dynamic workouts and expert nutritional advice. Experience the support of a community dedicated to your success as you embark on a path to a fitter, more energized you. At NAF, we believe in celebrating every milestone on your weight loss journey, empowering you to thrive.</p>
+                </div>
+            </div>
+            <div class="training-plan">
+                <img src="cardio.jpg" alt="Training Plan 3" onclick="enlargeTrainingPlan(this)">
+                <div class="training-plan-text">
+                    <h2>Maintain Weight</h2>
+                    <p>Find balance and sustainability with our Weight Maintenance Plan at NAF. Tailored for those seeking to preserve their current weight and overall well-being, this plan offers a harmonious blend of workouts and nutritional insights. In the NAF community, maintaining your weight is not a solitary endeavor but a shared commitment. Join us as we empower you to sustain a healthy, balanced lifestyle, ensuring that your wellness journey is both fulfilling and lasting</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enlarged training plan popup -->
+        <div class="enlarged-training-plan" onclick="closeEnlargedTrainingPlan()">
+            <div class="close-btn">&times;</div>
+            <img src="" alt="Enlarged Training Plan">
+            <div class="enlarged-training-plan-text"></div>
+        </div>
+
+        <!-- Add the script at the end of the body -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuIcon = document.querySelector('.menu-icon');
+                const sidebar = document.querySelector('.sidebar');
+                const header = document.querySelector('.header');
+
+                menuIcon.addEventListener('click', function () {
+                    sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+                    header.classList.toggle('push-content');
+                });
+            });
+
+            // Function to enlarge training plan
+            function enlargeTrainingPlan(item) {
+                const enlargedTrainingPlan = document.querySelector('.enlarged-training-plan');
+                const enlargedTrainingPlanImg = enlargedTrainingPlan.querySelector('img');
+                const enlargedTrainingPlanText = enlargedTrainingPlan.querySelector('.enlarged-training-plan-text');
+                const trainingPlanText = item.nextElementSibling;
+
+                enlargedTrainingPlanImg.src = item.src;
+                enlargedTrainingPlanText.innerHTML = trainingPlanText.innerHTML;
+                enlargedTrainingPlan.style.display = 'flex';
+            }
+
+            // Function to close enlarged training plan popup
+            function closeEnlargedTrainingPlan() {
+                document.querySelector('.enlarged-training-plan').style.display = 'none';
+            }
+
+            // Function to close sidebar
+            function closeSidebar() {
+                document.querySelector('.sidebar').style.width = '0';
+                document.querySelector('.header').classList.remove('push-content');
+            }
+        </script>
+    </header>
+</body>
+</html>
