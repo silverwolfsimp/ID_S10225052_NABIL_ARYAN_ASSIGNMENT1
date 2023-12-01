@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalized.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px; /* Adjust as needed */
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #FFD700; /* Change the color on hover */
+        }
+
+        /* Add styles to push the content when the sidebar is open */
+        .header.push-content {
+            margin-left: 250px; /* Adjust as needed */
+        }
+
+        /* Add styles to close the sidebar on smaller screens */
+        @media screen and (max-width: 600px) {
+            .header.push-content {
+                margin-left: 0;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="header">
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-icon">&#9776;</div>
+
+            <!-- Logo -->
+            <div class="logo"><img src="logo.png" alt="Logo"></div>
+
+            <!-- Shopping Cart Icon -->
+            <div class="cart-icon">&#128722;</div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="close-btn" onclick="closeSidebar()">&times;</div>
+          <a href="index.html">HOME</a>
+          <a href="merch.html">MERCHANDISE</a>
+          <a href="plans.html">TRAINING PLANS</a>
+          <a href="#">COACHING</a>
+      </div>
+
+
+
+
+        <div class="nafabout">
+            <img class="nafpic" src="Screenshot 2023-12-01 161414.png">
+            <div class="nafaboutwords">
+                <h1> ABOUT NAF </h1>
+                <div class="nafaboutwordsbody">
+                    Our mission goes beyond just workouts,
+                    it's about creating a space where you can truly be yourself while reaching your fitness goals. 
+                    At NAF, we believe in the power of authenticity and individuality. 
+                    Our community is built on the idea that everyone, regardless of their fitness level or background, deserves a comfortable and inclusive environment to thrive. 
+                    We're not just a fitness brand; we're your partners on this journey, empowering you to embrace your unique journey, celebrate your successes, and overcome challenges.
+                    Join us at NAF, where you're not just a participant, but a valued member of a community that champions self-expression and achievement.
+                    Here, it's not just about fitness; it's about you becoming the best version of yourself.
+                </div>
+            </div>
+        </div>
+
+        <!-- Add the script at the end of the body -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuIcon = document.querySelector('.menu-icon');
+                const sidebar = document.querySelector('.sidebar');
+                const header = document.querySelector('.header');
+
+                menuIcon.addEventListener('click', function () {
+                    sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+                    header.classList.toggle('push-content');
+                });
+            });
+        </script>
+    </header>
+</body>
+</html>
