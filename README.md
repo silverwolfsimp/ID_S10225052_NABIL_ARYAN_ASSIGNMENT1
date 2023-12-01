@@ -1,6 +1,6 @@
 # ID_S10225052_NABIL_ARYAN_ASSIGNMENT1
 nabil
-# Your Project's Name
+# NAF
 
 This is NAF. Or, Natural Advice Fitness. Meant to advocate for natural bodybuilding, and being comfortable within your own skin. Many people suffer from body dysmorphia and I am to counter that by making people know that everyone is unique and that no one should be ashamed as there is no shame in being weak, only staying weak.
  
