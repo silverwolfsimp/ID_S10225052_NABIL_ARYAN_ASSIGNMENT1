@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise</title>
+    <link rel="stylesheet" href="normalized.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #FFD700;
+            text-align: center;
+            padding: 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-icon,
+        .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .logo img {
+            max-height: 90px;
+        }
+
+        .merch-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .merch-item {
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .merch-item:hover {
+            transform: scale(1.1);
+        }
+
+        .enlarged-merch {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .enlarged-merch img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="menu-icon">&#9776;</div>
+            <div class="logo"><img src="logo.png" alt="Logo"></div>
+            <div class="cart-icon">&#128722;</div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="close-btn" onclick="closeSidebar()">&times;</div>
+            <a href="index.html">HOME</a>
+            <a href="merch.html">MERCHANDISE</a>
+            <a href="plans.html">TRAINING PLANS</a>
+            <a href="#">COACHING</a>
+        </div>
+
+
+    <!-- Merchandise Grid -->
+    <div class="merch-container">
+        <div class="merch-item" onclick="enlargeMerch(this)">
+            <img src="merch1.png" alt="Merch 1">
+            <p>Apparel</p>
+        </div>
+        <div class="merch-item" onclick="enlargeMerch(this)">
+            <img src="merch2.png" alt="Merch 2">
+            <p>Weightlifting Gear</p>
+        </div>
+        <div class="merch-item" onclick="enlargeMerch(this)">
+            <img src="merch3.png" alt="Merch 3">
+            <p>Supplements</p>
+        </div>
+        <div class="merch-item" onclick="enlargeMerch(this)">
+            <img src="merch4.png" alt="Merch 4">
+            <p>Decorations</p>
+        </div>
+        
+    </div>
+
+    <!-- Enlarged Merch Popup -->
+    <div class="enlarged-merch" onclick="closeEnlargedMerch()">
+        <img src="" alt="Enlarged Merch">
+    </div>
+
+    <script>
+        // Function to enlarge merch item
+        function enlargeMerch(item) {
+            const enlargedMerch = document.querySelector('.enlarged-merch');
+            const enlargedMerchImg = enlargedMerch.querySelector('img');
+            const merchImg = item.querySelector('img');
+
+            enlargedMerchImg.src = merchImg.src;
+            enlargedMerch.style.display = 'flex';
+        }
+
+        // Function to close enlarged merch popup
+        function closeEnlargedMerch() {
+            document.querySelector('.enlarged-merch').style.display = 'none';
+        }
+
+        // Function to close sidebar
+        function closeSidebar() {
+            document.querySelector('.sidebar').style.width = '0';
+            document.querySelector('.header').classList.remove('push-content');
+        }
+
+        // Your existing sidebar toggle functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.querySelector('.menu-icon');
+            const sidebar = document.querySelector('.sidebar');
+            const header = document.querySelector('.header');
+
+            function toggleSidebar() {
+                sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+                header.classList.toggle('push-content');
+            }
+
+            menuIcon.addEventListener('click', toggleSidebar);
+
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', toggleSidebar);
+            });
+        });
+    </script>
+</body>
+</html>
