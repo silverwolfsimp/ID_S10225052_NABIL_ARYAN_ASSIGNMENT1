@@ -2,66 +2,49 @@
 nabil
 # Your Project's Name
 
-One or two paragraphs providing an overview of your project. Tell us about your project.
-
-Essentially, this part is your sales pitch.
+This is NAF. Or, Natural Advice Fitness. Meant to advocate for natural bodybuilding, and being comfortable within your own skin. Many people suffer from body dysmorphia and I am to counter that by making people know that everyone is unique and that no one should be ashamed as there is no shame in being weak, only staying weak.
  
 ## Design Process
  
-Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. 
-These files should themselves either be included as a pdf file in the project itself (in an separate directory)
-Include the Adobe XD wireframe as a folder. You can include the XD share url. 
+I based the design off other fitness websites and used colour theory to inspire action. It's meant to be for both active gym goers and beginners who plan to begin their transformatinos.
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+Training Plans
+Allows anyone to try out a specific training plan
+
+Merchandise
+Allows anyone to bu merhcandise to support us.
+
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+Training Plans
+Allows anyone to try out a specific training plan
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+Merchandise
+Allows anyone to bu merhcandise to support us.
 
 ### Features Left to Implement
-- Another feature idea
+NIL
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+NIL
 
 
 ## Testing
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+Unfortunately, the sidebar is very scuffed in mobile view andis only usable on the merch page.
 
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The text for section ==merch page was found from a free png website [https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiv0smhuu6CAxX3KIMDHZNzCqkYABAAGgJzZg&ae=2&gclid=CjwKCAiApaarBhB7EiwAYiMwqtXr47BqTlBnxYJ8bRoGjL0SBzQsU-I2QCSCGBQgbJmXADQsj_79VBoCoo8QAvD_BwE&ohost=www.google.com&cid=CAESVeD2HoQY6LGA_aX-JEjAlbx1UBIHTCHKGCSerLA7OxHgIuJkDuBzeCbeaop_abYRIHebb0QodkzdFYMlPLTLL_FzinWZytprjkkjJtGvrAwqKMFDvcM&sig=AOD64_16OvUNtkLmRNFuEFfl8mSE6FDhdg&q&adurl&ved=2ahUKEwiatMOhuu6CAxWk1TgGHcFeDNsQ0Qx6BAgJEAE]
 
-### Media
-- The photos used in this site were obtained from ...
+- the logo was a picture offamous fitness influencer Davis Diley [https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjD-sOsuu6CAxXBzDgGHfwTCqcQFnoECAcQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fdavis.diley%2F%3Fhl%3Den&usg=AOvVaw0yacrogdQ_T-PhNnvQLiXJ&opi=89978449]
+
+
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from Davis DIley
